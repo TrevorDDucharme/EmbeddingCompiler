@@ -1,0 +1,10 @@
+{
+	"vcpkg.target.defaultTriplet": "x64-linux",
+	"vcpkg.target.hostTriplet": "-linux",
+	"vcpkg.target.useStaticLib": false,
+	"cmake.configureArgs": [
+		"-DCMAKE_TOOLCHAIN_FILE=/home/trevor/vcpkg/scripts/buildsystems/vcpkg.cmake",
+		"-DVCPKG_MANIFEST_MODE=ON",
+		"-DVCPKG_TARGET_TRIPLET=x64-linux"
+	]
+}

@@ -1,0 +1,14 @@
+{
+	"dependencies": [
+		{
+			"name": "libarchive",
+			"features": [
+			  "lz4",
+			  "lzma",
+			  "zstd",
+			  "bzip2"
+			]
+		},
+		"zstd"
+	]
+}
