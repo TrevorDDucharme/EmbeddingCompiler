@@ -67,10 +67,14 @@ int main(int argc, char *argv[])
 	header << "bool init" << file_name.getValue() << "EmbeddedVFS(char* programName);\n";
 	header << "unsigned char* decompress"<<file_name.getValue()<<"ZipInMemory(unsigned char* inputBuffer, unsigned int inputBufferSize);\n";
 	header << "bool mount" << file_name.getValue() << "EmbeddedVFS();\n";
-	header << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFiles(const char* path);\n";
+	header << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFiles(const char* path, bool fullPath = false);\n";
+	header << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFilesRelativeTo(const char* path, const char* relativeTo);\n";
 	header << "std::vector<unsigned char> load" << file_name.getValue() << "EmbeddedFile(const char* path);\n";
 	header << "std::string load" << file_name.getValue() << "EmbeddedFileAsString(const char* path);\n";
 	header << "bool exists" << file_name.getValue() << "EmbeddedFile(const char* path);\n";
+	header << "bool is" << file_name.getValue() << "EmbeddedFolder(const char* path);\n";
+	header << "bool is" << file_name.getValue() << "EmbeddedFile(const char* path);\n";
+	header << "bool extract" << file_name.getValue() << "To(const char* embeddedPath, const char* realPath);\n";
 
 
 	std::ofstream source(output.getValue()+"/"+file_name.getValue()+".cpp");
@@ -156,14 +160,43 @@ int main(int argc, char *argv[])
 	source << "\treturn true;\n";
 	source << "}\n\n";
 
-	source << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFiles(const char* path)\n";
+	source << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFiles(const char* path, bool fullPath)\n";
 	source << "{\n";
 	source << "\tstd::vector<std::string> files;\n";
 	source << "\tchar **rc = PHYSFS_enumerateFiles(path);\n";
 	source << "\tchar **i;\n";
 	source << "\tfor (i = rc; *i != nullptr; i++)\n";
 	source << "\t{\n";
-	source << "\t\tfiles.push_back(*i);\n";
+	source << "\t\tif (fullPath) {\n";
+	source << "\t\t\tstd::string full = std::string(path);\n";
+	source << "\t\t\tif (full.back() != '/' && full.back() != '\\0') full += '/';\n";
+	source << "\t\t\tfull += *i;\n";
+	source << "\t\t\tfiles.push_back(full);\n";
+	source << "\t\t} else {\n";
+	source << "\t\t\tfiles.push_back(*i);\n";
+	source << "\t\t}\n";
+	source << "\t}\n";
+	source << "\tPHYSFS_freeList(rc);\n";
+	source << "\treturn files;\n";
+	source << "}\n\n";
+
+	source << "std::vector<std::string> list" << file_name.getValue() << "EmbeddedFilesRelativeTo(const char* path, const char* relativeTo)\n";
+	source << "{\n";
+	source << "\tstd::vector<std::string> files;\n";
+	source << "\tchar **rc = PHYSFS_enumerateFiles(path);\n";
+	source << "\tchar **i;\n";
+	source << "\tstd::string relTo = std::string(relativeTo);\n";
+	source << "\tif (!relTo.empty() && relTo.back() != '/' && relTo.back() != '\\0') relTo += '/';\n";
+	source << "\tfor (i = rc; *i != nullptr; i++)\n";
+	source << "\t{\n";
+	source << "\t\tstd::string full = std::string(path);\n";
+	source << "\t\tif (full.back() != '/' && full.back() != '\\0') full += '/';\n";
+	source << "\t\tfull += *i;\n";
+	source << "\t\tif (full.find(relTo) == 0) {\n";
+	source << "\t\t\tfiles.push_back(full.substr(relTo.length()));\n";
+	source << "\t\t} else {\n";
+	source << "\t\t\tfiles.push_back(full);\n";
+	source << "\t\t}\n";
 	source << "\t}\n";
 	source << "\tPHYSFS_freeList(rc);\n";
 	source << "\treturn files;\n";
@@ -197,9 +230,65 @@ int main(int argc, char *argv[])
 	source << "\treturn std::string(buffer.begin(), buffer.end());\n";
 	source << "}\n\n";
 
+
 	source << "bool exists" << file_name.getValue() << "EmbeddedFile(const char* path)\n";
 	source << "{\n";
 	source << "\treturn PHYSFS_exists(path) != 0;\n";
+	source << "}\n\n";
+
+	source << "bool is" << file_name.getValue() << "EmbeddedFolder(const char* path)\n";
+	source << "{\n";
+	source << "\treturn PHYSFS_isDirectory(path) != 0;\n";
+	source << "}\n\n";
+
+
+	source << "bool is" << file_name.getValue() << "EmbeddedFile(const char* path)\n";
+	source << "{\n";
+	source << "\treturn PHYSFS_isDirectory(path) == 0 && PHYSFS_exists(path) != 0;\n";
+	source << "}\n\n";
+
+	// extractTo function
+	source << "#include <sys/stat.h>\n";
+	source << "#include <sys/types.h>\n";
+	source << "#include <fstream>\n";
+	source << "#include <vector>\n";
+	source << "#include <string>\n";
+	source << "#include <cstring>\n";
+	source << "#include <cerrno>\n";
+	source << "#include <filesystem>\n";
+	source << "bool extract" << file_name.getValue() << "To(const char* embeddedPath, const char* realPath) {\n";
+	source << "    if (PHYSFS_isDirectory(embeddedPath)) {\n";
+	source << "        std::filesystem::create_directories(realPath);\n";
+	source << "        char **rc = PHYSFS_enumerateFiles(embeddedPath);\n";
+	source << "        char **i;\n";
+	source << "        for (i = rc; *i != nullptr; i++) {\n";
+	source << "            std::string subEmbedded = std::string(embeddedPath);\n";
+	source << "            if (!subEmbedded.empty() && subEmbedded.back() != '/') subEmbedded += '/';\n";
+	source << "            subEmbedded += *i;\n";
+	source << "            std::string subReal = std::string(realPath);\n";
+	source << "            if (!subReal.empty() && subReal.back() != '/') subReal += '/';\n";
+	source << "            subReal += *i;\n";
+	source << "            if (!extract" << file_name.getValue() << "To(subEmbedded.c_str(), subReal.c_str())) {\n";
+	source << "                PHYSFS_freeList(rc);\n";
+	source << "                return false;\n";
+	source << "            }\n";
+	source << "        }\n";
+	source << "        PHYSFS_freeList(rc);\n";
+	source << "        return true;\n";
+	source << "    } else if (PHYSFS_exists(embeddedPath)) {\n";
+	source << "        PHYSFS_file* file = PHYSFS_openRead(embeddedPath);\n";
+	source << "        if (!file) return false;\n";
+	source << "        PHYSFS_sint64 fileSize = PHYSFS_fileLength(file);\n";
+	source << "        std::vector<unsigned char> buffer(fileSize);\n";
+	source << "        PHYSFS_read(file, buffer.data(), 1, fileSize);\n";
+	source << "        PHYSFS_close(file);\n";
+	source << "        std::ofstream out(realPath, std::ios::binary);\n";
+	source << "        if (!out) return false;\n";
+	source << "        out.write(reinterpret_cast<const char*>(buffer.data()), buffer.size());\n";
+	source << "        out.close();\n";
+	source << "        return true;\n";
+	source << "    }\n";
+	source << "    return false;\n";
 	source << "}\n";
 
 	source.close();

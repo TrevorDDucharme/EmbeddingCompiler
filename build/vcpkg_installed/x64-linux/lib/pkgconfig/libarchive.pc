@@ -5,7 +5,7 @@ includedir=${prefix}/include
 
 Name: libarchive
 Description: library that can create and read several streaming archive formats
-Version: 3.7.7
+Version: 3.8.1
 
 Libs: "-L${libdir}" -larchive
 Requires: zlib bzip2 liblzma liblz4 libzstd libcrypto libssl libssl libssl libssl libssl libssl

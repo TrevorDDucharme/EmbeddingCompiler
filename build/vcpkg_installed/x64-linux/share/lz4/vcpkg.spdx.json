@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/lz4-x64-linux-1.10.0-93f5bf2f-ab6e-4e75-8ce6-2781b28c5d78",
-  "name": "lz4:x64-linux@1.10.0 62c16df74c759e184c98380656887ea9313961f5054a8b429279957348327e6c",
+  "documentNamespace": "https://spdx.org/spdxdocs/lz4-x64-linux-1.10.0-d3699ced-3dd5-4fae-955c-0ea2f2eb8c8b",
+  "name": "lz4:x64-linux@1.10.0 88216010710e19f8e1e98617336e563434d6fad387a1cde88022f471f1009328",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-10-18-e392d7347fe72dff56e7857f7571c22301237ae6"
+      "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2024-12-15T21:26:43Z"
+    "created": "2025-07-29T12:04:41Z"
   },
   "relationships": [
     {
@@ -53,6 +53,11 @@
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "DEPENDENCY_MANIFEST_OF",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
       "spdxElementId": "SPDXRef-file-2",
       "relationshipType": "CONTAINED_BY",
       "relatedSpdxElement": "SPDXRef-port"
@@ -68,7 +73,7 @@
       "name": "lz4",
       "SPDXID": "SPDXRef-port",
       "versionInfo": "1.10.0",
-      "downloadLocation": "NOASSERTION",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/lz4",
       "homepage": "https://github.com/lz4/lz4",
       "licenseConcluded": "BSD-2-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -79,7 +84,7 @@
     {
       "name": "lz4:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "62c16df74c759e184c98380656887ea9313961f5054a8b429279957348327e6c",
+      "versionInfo": "88216010710e19f8e1e98617336e563434d6fad387a1cde88022f471f1009328",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSD-2-Clause",
       "licenseDeclared": "NOASSERTION",
@@ -87,7 +92,7 @@
       "comment": "This is a binary package built by vcpkg."
     },
     {
-      "SPDXID": "SPDXRef-resource-1",
+      "SPDXID": "SPDXRef-resource-0",
       "name": "lz4/lz4",
       "downloadLocation": "git+https://github.com/lz4/lz4@v1.10.0",
       "licenseConcluded": "NOASSERTION",
@@ -103,20 +108,8 @@
   ],
   "files": [
     {
-      "fileName": ".//home/trevor/vcpkg/ports/lz4/vcpkg.json",
+      "fileName": "./portfile.cmake",
       "SPDXID": "SPDXRef-file-0",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "dbc58f209d5e2ddbfd04ef4984c657a6c097710461114313a26617d983694666"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": ".//home/trevor/vcpkg/ports/lz4/portfile.cmake",
-      "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -127,24 +120,36 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/lz4/usage",
-      "SPDXID": "SPDXRef-file-2",
+      "fileName": "./vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "32490d4c5d482fcef4f551b56ac5db1c6e38e7c5779ff8f656c9d93cdb155470"
+          "checksumValue": "dbc58f209d5e2ddbfd04ef4984c657a6c097710461114313a26617d983694666"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/lz4/target-lz4-lz4.diff",
-      "SPDXID": "SPDXRef-file-3",
+      "fileName": "./target-lz4-lz4.diff",
+      "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
           "algorithm": "SHA256",
           "checksumValue": "82e8dcd050d3249f6ce0598a18136ee5939667a28e41ff5dd220d71b42a156f0"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./usage",
+      "SPDXID": "SPDXRef-file-3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "32490d4c5d482fcef4f551b56ac5db1c6e38e7c5779ff8f656c9d93cdb155470"
         }
       ],
       "licenseConcluded": "NOASSERTION",

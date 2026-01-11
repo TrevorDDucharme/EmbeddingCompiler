@@ -1,3 +1,3 @@
-/media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build/CMakeFiles/EmbeddingCompiler.dir
-/media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build/CMakeFiles/edit_cache.dir
-/media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build/CMakeFiles/rebuild_cache.dir
+/run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build/CMakeFiles/EmbeddingCompiler.dir
+/run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build/CMakeFiles/edit_cache.dir
+/run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build/CMakeFiles/rebuild_cache.dir

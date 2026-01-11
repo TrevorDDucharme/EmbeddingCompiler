@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/zstd-x64-linux-1.5.6-7f8797de-1fb4-43f8-8eee-2fc95481f200",
-  "name": "zstd:x64-linux@1.5.6 5015df1dd0466de0de02e4c62dcad5bd28cd3f732119588b42e19603f1b190c7",
+  "documentNamespace": "https://spdx.org/spdxdocs/zstd-x64-linux-1.5.7-87aec161-029d-4a04-9854-db844dba105a",
+  "name": "zstd:x64-linux@1.5.7 b9365eaae37740ed2895e8e541e45f3356f6c1c6b57eee0514cd3f12657df198",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-10-18-e392d7347fe72dff56e7857f7571c22301237ae6"
+      "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2024-12-14T20:11:18Z"
+    "created": "2025-07-29T12:04:35Z"
   },
   "relationships": [
     {
@@ -63,6 +63,11 @@
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "DEPENDENCY_MANIFEST_OF",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
       "spdxElementId": "SPDXRef-file-2",
       "relationshipType": "CONTAINED_BY",
       "relatedSpdxElement": "SPDXRef-port"
@@ -87,8 +92,8 @@
     {
       "name": "zstd",
       "SPDXID": "SPDXRef-port",
-      "versionInfo": "1.5.6",
-      "downloadLocation": "NOASSERTION",
+      "versionInfo": "1.5.7",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/zstd",
       "homepage": "https://facebook.github.io/zstd/",
       "licenseConcluded": "BSD-3-Clause OR GPL-2.0-only",
       "licenseDeclared": "NOASSERTION",
@@ -99,7 +104,7 @@
     {
       "name": "zstd:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "5015df1dd0466de0de02e4c62dcad5bd28cd3f732119588b42e19603f1b190c7",
+      "versionInfo": "b9365eaae37740ed2895e8e541e45f3356f6c1c6b57eee0514cd3f12657df198",
       "downloadLocation": "NONE",
       "licenseConcluded": "BSD-3-Clause OR GPL-2.0-only",
       "licenseDeclared": "NOASSERTION",
@@ -107,60 +112,48 @@
       "comment": "This is a binary package built by vcpkg."
     },
     {
-      "SPDXID": "SPDXRef-resource-1",
+      "SPDXID": "SPDXRef-resource-0",
       "name": "facebook/zstd",
-      "downloadLocation": "git+https://github.com/facebook/zstd@v1.5.6",
+      "downloadLocation": "git+https://github.com/facebook/zstd@v1.5.7",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
       "checksums": [
         {
           "algorithm": "SHA512",
-          "checksumValue": "ca12dffd86618ca008e1ecc79056c1129cb4e61668bf13a3cd5b2fa5c93bc9c92c80f64c1870c68b9c20009d9b3a834eac70db72242d5106125a1c53cccf8de8"
+          "checksumValue": "26e441267305f6e58080460f96ab98645219a90d290a533410b1b0b1d2f870721c95f8384e342ee647c5e968385a5b7e30c2d04340c37f59b3e6d86762c3260c"
         }
       ]
     }
   ],
   "files": [
     {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/vcpkg.json",
+      "fileName": "./portfile.cmake",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "9b5eef0d52e96174f408df225a3b8519b7dcad05c2a25dfad346ae4955b5dca8"
+          "checksumValue": "b348bd1c831dcda55e55f2b251178c0e9414161a2474dab58e76be639e870575"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/fix-windows-rc-compile.patch",
+      "fileName": "./vcpkg.json",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "24080a83a9d7b19b431fc499972f404e86fa96b188315d3fb8bca932da88fe66"
+          "checksumValue": "1d6262377eaee174cc4934c4cc9cf13d0f679b26d129fb4b5707f49bf876d20a"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/portfile.cmake",
+      "fileName": "./no-static-suffix.patch",
       "SPDXID": "SPDXRef-file-2",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "d71625895a1ab3ff63bc8ea66b5d5b7ffb1a38e42c099efe7056122a679f0de6"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/no-static-suffix.patch",
-      "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -171,24 +164,36 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/fix-emscripten-and-clang-cl.patch",
-      "SPDXID": "SPDXRef-file-4",
+      "fileName": "./fix-emscripten-and-clang-cl.patch",
+      "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "041a4839df3d92f1590fcac90a6be6be7821bd2095557b182245114e003231f4"
+          "checksumValue": "eed141d2f80da0c549481ae928ea1a4ad226fb7dc90c16217a5fc4ea4b560cf0"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/zstd/usage",
-      "SPDXID": "SPDXRef-file-5",
+      "fileName": "./usage",
+      "SPDXID": "SPDXRef-file-4",
       "checksums": [
         {
           "algorithm": "SHA256",
           "checksumValue": "dd373e885aea14820e812e58de22d2e8d83f42248d695d6877fe17bd0f3ff455"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": "./fix-windows-rc-compile.patch",
+      "SPDXID": "SPDXRef-file-5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "24080a83a9d7b19b431fc499972f404e86fa96b188315d3fb8bca932da88fe66"
         }
       ],
       "licenseConcluded": "NOASSERTION",

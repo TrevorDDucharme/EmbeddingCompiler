@@ -1,8 +1,8 @@
 [
 {
-  "directory": "/media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build",
-  "command": "/usr/bin/c++ -DLIBXML_STATIC -isystem /media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build/vcpkg_installed/x64-linux/include -isystem /media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/build/vcpkg_installed/x64-linux/include/libxml2 -g -std=gnu++20 -o CMakeFiles/EmbeddingCompiler.dir/main.o -c /media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/main.cpp",
-  "file": "/media/trevor/1TB/Projects/Software/Programs/EmbeddingCompiler/main.cpp",
+  "directory": "/run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build",
+  "command": "/usr/bin/g++ -DLIBXML_STATIC -isystem /run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build/vcpkg_installed/x64-linux/include -isystem /run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/build/vcpkg_installed/x64-linux/include/libxml2 -g -std=gnu++20 -o CMakeFiles/EmbeddingCompiler.dir/main.o -c /run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/main.cpp",
+  "file": "/run/media/trevor/1TB/Projects/Programs/EmbeddingCompiler/main.cpp",
   "output": "CMakeFiles/EmbeddingCompiler.dir/main.o"
 }
 ]

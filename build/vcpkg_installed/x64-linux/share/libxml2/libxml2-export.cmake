@@ -60,7 +60,7 @@ add_library(LibXml2::LibXml2 STATIC IMPORTED)
 set_target_properties(LibXml2::LibXml2 PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "LIBXML_STATIC"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/libxml2"
-  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:dl>;\$<LINK_ONLY:m>;Iconv::Iconv;\$<LINK_ONLY:LibLZMA::LibLZMA>;\$<LINK_ONLY:Threads::Threads>;\$<LINK_ONLY:ZLIB::ZLIB>"
+  INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:dl>;\$<LINK_ONLY:m>;Iconv::Iconv;\$<LINK_ONLY:Threads::Threads>;\$<LINK_ONLY:ZLIB::ZLIB>"
 )
 
 # Load information for each installed configuration.

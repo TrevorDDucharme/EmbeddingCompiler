@@ -3,13 +3,13 @@
   "spdxVersion": "SPDX-2.2",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "documentNamespace": "https://spdx.org/spdxdocs/libiconv-x64-linux-1.17#4-7bf13dd0-ff84-4393-adbc-25b96028f42d",
-  "name": "libiconv:x64-linux@1.17#4 616348b098d90fbbca5b5a761f2cfb86cda790b280b9197a464bd6757389265f",
+  "documentNamespace": "https://spdx.org/spdxdocs/libiconv-x64-linux-1.18#1-1047ecd9-6054-41a8-90e2-0a9fab384a88",
+  "name": "libiconv:x64-linux@1.18#1 37f6dfcfded1c6efcef21e2eb5eab055767b063107c64c4bc7452da616035817",
   "creationInfo": {
     "creators": [
-      "Tool: vcpkg-2024-10-18-e392d7347fe72dff56e7857f7571c22301237ae6"
+      "Tool: vcpkg-2025-04-16-f9b6c6917b23c1ccf16c1a9f015ebabf8f615045"
     ],
-    "created": "2024-12-15T21:24:15Z"
+    "created": "2025-07-29T11:59:56Z"
   },
   "relationships": [
     {
@@ -53,11 +53,6 @@
       "relatedSpdxElement": "SPDXRef-file-6"
     },
     {
-      "spdxElementId": "SPDXRef-port",
-      "relationshipType": "CONTAINS",
-      "relatedSpdxElement": "SPDXRef-file-7"
-    },
-    {
       "spdxElementId": "SPDXRef-binary",
       "relationshipType": "GENERATED_FROM",
       "relatedSpdxElement": "SPDXRef-port"
@@ -70,6 +65,11 @@
     {
       "spdxElementId": "SPDXRef-file-1",
       "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "DEPENDENCY_MANIFEST_OF",
       "relatedSpdxElement": "SPDXRef-port"
     },
     {
@@ -96,30 +96,25 @@
       "spdxElementId": "SPDXRef-file-6",
       "relationshipType": "CONTAINED_BY",
       "relatedSpdxElement": "SPDXRef-port"
-    },
-    {
-      "spdxElementId": "SPDXRef-file-7",
-      "relationshipType": "CONTAINED_BY",
-      "relatedSpdxElement": "SPDXRef-port"
     }
   ],
   "packages": [
     {
       "name": "libiconv",
       "SPDXID": "SPDXRef-port",
-      "versionInfo": "1.17#4",
-      "downloadLocation": "NOASSERTION",
+      "versionInfo": "1.18#1",
+      "downloadLocation": "git+https://github.com/Microsoft/vcpkg#ports/libiconv",
       "homepage": "https://www.gnu.org/software/libiconv/",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
-      "description": "GNU Unicode text conversion",
+      "description": "iconv() text conversion.\nThis port installs GNU libiconv if the system C runtime doesn't provide a suitable iconv() implementation.",
       "comment": "This is the port (recipe) consumed by vcpkg."
     },
     {
       "name": "libiconv:x64-linux",
       "SPDXID": "SPDXRef-binary",
-      "versionInfo": "616348b098d90fbbca5b5a761f2cfb86cda790b280b9197a464bd6757389265f",
+      "versionInfo": "37f6dfcfded1c6efcef21e2eb5eab055767b063107c64c4bc7452da616035817",
       "downloadLocation": "NONE",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
@@ -127,85 +122,73 @@
       "comment": "This is a binary package built by vcpkg."
     },
     {
-      "SPDXID": "SPDXRef-resource-1",
-      "name": "libiconv-${VERSION}.tar.gz",
-      "packageFileName": "libiconv-${VERSION}.tar.gz",
-      "downloadLocation": "https://ftp.gnu.org/gnu/libiconv/libiconv-${VERSION}.tar.gz",
+      "SPDXID": "SPDXRef-resource-0",
+      "name": "libiconv-1.18.tar.gz",
+      "packageFileName": "libiconv-1.18.tar.gz",
+      "downloadLocation": "https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz",
       "licenseConcluded": "NOASSERTION",
       "licenseDeclared": "NOASSERTION",
       "copyrightText": "NOASSERTION",
       "checksums": [
         {
           "algorithm": "SHA512",
-          "checksumValue": "18a09de2d026da4f2d8b858517b0f26d853b21179cf4fa9a41070b2d140030ad9525637dc4f34fc7f27abca8acdc84c6751dfb1d426e78bf92af4040603ced86"
+          "checksumValue": "a55eb3b7b785a78ab8918db8af541c9e11deb5ff4f89d54483287711ed797d87848ce0eafffa7ce26d9a7adb4b5a9891cb484f94bd4f51d3ce97a6a47b4c719a"
         }
       ]
     }
   ],
   "files": [
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/vcpkg.json",
+      "fileName": "./portfile.cmake",
       "SPDXID": "SPDXRef-file-0",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "2b4c18e9f3cea9cd74a40826602e0158815b6dfc0c61b464db5004bf04809edb"
+          "checksumValue": "fb8348967acd8d536c641102e709745698c7d0cf2d819058f1486ec694723d04"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/0004-ModuleFileName.patch",
+      "fileName": "./vcpkg.json",
       "SPDXID": "SPDXRef-file-1",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "5405e2493fa1846788e2bb2fd62334d2d98d2a5fa47a36a52047608472125d46"
+          "checksumValue": "676d6a9a8ce0f16f193f94d02f5701cbda56eded54454c01e01ca85dd97fcdab"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/portfile.cmake",
+      "fileName": "./0004-ModuleFileName.patch",
       "SPDXID": "SPDXRef-file-2",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "0d3899cc05eddda2b6e79002cf171de80ff2ca49165a68097835c90cc4d725cb"
+          "checksumValue": "514a0cd2ce138fb2c6d927d3f41d24c13c37023fcd88ce63dbf5760a6b9813b7"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/clang-fortify.patch",
+      "fileName": "./0002-Config-for-MSVC.patch",
       "SPDXID": "SPDXRef-file-3",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "1e8bf046ffe3fe05d7b7485489a8aed80df5a084341c986a72b809aa91d9a500"
+          "checksumValue": "f0efb5af1ca500aab48a6463cef3b2f30eb9c8c91dc7392ee8932473044ff779"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/usage",
+      "fileName": "./vcpkg-cmake-wrapper.cmake",
       "SPDXID": "SPDXRef-file-4",
-      "checksums": [
-        {
-          "algorithm": "SHA256",
-          "checksumValue": "d7cbdf659f9d8a102889357ffb9957ce898867c64c20e6afbe736bd21a85a887"
-        }
-      ],
-      "licenseConcluded": "NOASSERTION",
-      "copyrightText": "NOASSERTION"
-    },
-    {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/vcpkg-cmake-wrapper.cmake",
-      "SPDXID": "SPDXRef-file-5",
       "checksums": [
         {
           "algorithm": "SHA256",
@@ -216,24 +199,24 @@
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/0003-Add-export.patch",
-      "SPDXID": "SPDXRef-file-6",
+      "fileName": "./usage",
+      "SPDXID": "SPDXRef-file-5",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "e920b915952a0fb574a10538ac117e2d668465ea5353586296a923cb3319159d"
+          "checksumValue": "51a8197a7188b1d034284d676ee515982bb216c03ae10e5bb9618d734ef6b1ea"
         }
       ],
       "licenseConcluded": "NOASSERTION",
       "copyrightText": "NOASSERTION"
     },
     {
-      "fileName": ".//home/trevor/vcpkg/ports/libiconv/0002-Config-for-MSVC.patch",
-      "SPDXID": "SPDXRef-file-7",
+      "fileName": "./0003-Add-export.patch",
+      "SPDXID": "SPDXRef-file-6",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "7eb9dded5bc1e34a02d2bfa88f8c1cf1f454b3cf5e82d0d0c45cf7bf45a54c19"
+          "checksumValue": "e920b915952a0fb574a10538ac117e2d668465ea5353586296a923cb3319159d"
         }
       ],
       "licenseConcluded": "NOASSERTION",

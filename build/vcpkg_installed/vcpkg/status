@@ -2,31 +2,31 @@ Package: vcpkg-cmake-config
 Version: 2024-05-23
 Architecture: x64-linux
 Multi-Arch: same
-Abi: e16c4c2bb572a5d2af246e4646b3b0e4c18686f3b17606da7bffcead7bd941fc
+Abi: 8e7297c5886b1638c9a620d6291576f1806f93842198c0c1a6f2a05f8d129ca9
 Status: install ok installed
 
 Package: vcpkg-cmake
 Version: 2024-04-23
 Architecture: x64-linux
 Multi-Arch: same
-Abi: ac35764673d845da0fb83695484de8d2dedb231aa56e8927dd9b4cbd28a6fc68
+Abi: ca71bae6f43cb842ce6d6f051b6cfb44b2b94825757d04f297c4434f1ba06e61
 Status: install ok installed
 
 Package: zstd
-Version: 1.5.6
+Version: 1.5.7
 Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-linux
 Multi-Arch: same
-Abi: 5015df1dd0466de0de02e4c62dcad5bd28cd3f732119588b42e19603f1b190c7
+Abi: b9365eaae37740ed2895e8e541e45f3356f6c1c6b57eee0514cd3f12657df198
 Description: Zstandard - Fast real-time compression algorithm
 Status: install ok installed
 
 Package: liblzma
-Version: 5.6.3
+Version: 5.8.1
 Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-linux
 Multi-Arch: same
-Abi: bb912d66a8554c86894cf07ea9b1977338c9774dd350e4360673f813a59b5fe4
+Abi: ad2399659bafd15c389e5d5a358170753b67a8f1c592ca10f017dc14a6a619b2
 Description: Compression library with an API similar to that of zlib.
 Status: install ok installed
 
@@ -35,7 +35,7 @@ Version: 1.10.0
 Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-linux
 Multi-Arch: same
-Abi: 62c16df74c759e184c98380656887ea9313961f5054a8b429279957348327e6c
+Abi: 88216010710e19f8e1e98617336e563434d6fad387a1cde88022f471f1009328
 Description: Lossless compression algorithm, providing compression speed at 400 MB/s per core.
 Status: install ok installed
 
@@ -44,28 +44,29 @@ Version: 1.3.1
 Depends: vcpkg-cmake
 Architecture: x64-linux
 Multi-Arch: same
-Abi: 5d28906db025ef87916fb144fe61f9aee660ced0f2d6c5078f728c5ea4564b0d
+Abi: b5d450f22cd32d6377147505d9d44fa28659f2905fcad9a71e4d838821ab8f75
 Description: A compression library
 Status: install ok installed
 
 Package: libiconv
-Version: 1.17
-Port-Version: 4
+Version: 1.18
+Port-Version: 1
 Architecture: x64-linux
 Multi-Arch: same
-Abi: 616348b098d90fbbca5b5a761f2cfb86cda790b280b9197a464bd6757389265f
-Description: GNU Unicode text conversion
+Abi: 37f6dfcfded1c6efcef21e2eb5eab055767b063107c64c4bc7452da616035817
+Description: iconv() text conversion.
+    This port installs GNU libiconv if the system C runtime doesn't provide a suitable iconv() implementation.
 Status: install ok installed
 
 Package: libxml2
-Version: 2.11.9
+Version: 2.13.8
 Port-Version: 1
 Depends: vcpkg-cmake, vcpkg-cmake-config
 Architecture: x64-linux
 Multi-Arch: same
-Abi: d392637401570b6ee40a29829a5285204ebc68a0ab15f0a0e93a99b67dec33fe
+Abi: 175311cfdcfc249f3046d4c48ae6a0078e081a2c9fd0d0d011cfd01b4978bb9a
 Description: Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform).
-Default-Features: iconv, lzma, zlib
+Default-Features: iconv, zlib
 Status: install ok installed
 
 Package: libxml2
@@ -82,7 +83,7 @@ Depends: liblzma
 Architecture: x64-linux
 Multi-Arch: same
 Description: Use LZMA
-Status: install ok installed
+Status: purge ok not-installed
 
 Package: libxml2
 Feature: zlib
@@ -93,19 +94,19 @@ Description: Use ZLib
 Status: install ok installed
 
 Package: vcpkg-cmake-get-vars
-Version: 2024-09-22
+Version: 2025-05-29
 Depends: vcpkg-cmake
 Architecture: x64-linux
 Multi-Arch: same
-Abi: b4aa3d328261ec650cf41360acd24dec573db76a0abf770a66137a984bf175bd
+Abi: cc8057b4dc4d21f8387167309d2c1d88ad7cf77401b51aed8b799d583b011964
 Status: install ok installed
 
 Package: openssl
-Version: 3.4.0
+Version: 3.5.1
 Depends: vcpkg-cmake, vcpkg-cmake-config, vcpkg-cmake-get-vars
 Architecture: x64-linux
 Multi-Arch: same
-Abi: c9a293be66619ac02a3e4b87abc99a6d4aa0ff21e3f6f3b054d0c630de5134a6
+Abi: 02d018bdaf8a6ddf18381b11b3a79d9cd848232e5e1f8aff34ac111f7466b745
 Description: OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.
 Status: install ok installed
 
@@ -115,7 +116,7 @@ Port-Version: 6
 Depends: vcpkg-cmake
 Architecture: x64-linux
 Multi-Arch: same
-Abi: ed0096f466bbba6e452336825249a6a2c8bab7b7123869707de98de7b21a3850
+Abi: fd0bc251705d871754c5770c6161cbe12963048b6bcf63628a0c6b2b23178c9f
 Description: bzip2 is a freely available, patent free, high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.
 Default-Features: tool
 Status: install ok installed
@@ -128,14 +129,13 @@ Description: Builds bzip2 executable
 Status: install ok installed
 
 Package: libarchive
-Version: 3.7.7
-Port-Version: 2
+Version: 3.8.1
 Depends: vcpkg-cmake, zlib
 Architecture: x64-linux
 Multi-Arch: same
-Abi: b066ef64a8d30df7ef278fbd490591e44f0a920e8705fd7ec206866af7968581
+Abi: 14bb4dacaa5808ebd7974df2053ec45398f6ef87927a448895f5a1c3d93eb5b5
 Description: Library for reading and writing streaming archives
-Default-Features: bzip2, crypto, libxml2, lz4, lzma, zstd
+Default-Features: bzip2, crypto, lz4, lzma, xar, zstd
 Status: install ok installed
 
 Package: libarchive
@@ -160,7 +160,7 @@ Depends: libxml2
 Architecture: x64-linux
 Multi-Arch: same
 Description: Libxml2 support
-Status: install ok installed
+Status: purge ok not-installed
 
 Package: libarchive
 Feature: lz4
@@ -184,5 +184,13 @@ Depends: zstd
 Architecture: x64-linux
 Multi-Arch: same
 Description: Zstd support
+Status: install ok installed
+
+Package: libarchive
+Feature: xar
+Depends: libxml2
+Architecture: x64-linux
+Multi-Arch: same
+Description: Xar support
 Status: install ok installed
 
